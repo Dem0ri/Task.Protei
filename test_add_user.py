@@ -34,7 +34,7 @@ class TestAddUser:
         add_message = self.AddPage.get_add_success_message()
         assert "Данные добавлены." == add_message
 
-    def test_add_user_man_with_all_chekcboxes(self):
+    def test_add_user_man_with_all_checkbox(self):
         self.AddPage.fill_email_form('abc@mail.ru')
         self.AddPage.fill_name_form('Сергей')
         self.AddPage.fill_gender_form('Мужской')
@@ -45,7 +45,7 @@ class TestAddUser:
         add_message = self.AddPage.get_add_success_message()
         assert "Данные добавлены." == add_message
 
-    def test_add_user_woman_with_all_chekcboxes(self):
+    def test_add_user_woman_with_all_checkbox(self):
         self.AddPage.fill_email_form('svet@mailz.ru')
         self.AddPage.fill_name_form('Светлана')
         self.AddPage.fill_gender_form('Женский')
@@ -86,7 +86,7 @@ class TestAddUser:
         error_email = self.AddPage.get_error_email_message()
         assert "Неверный формат E-Mail" == error_email
 
-    def test_add_user_without_probel_name_form(self):
+    def test_add_validate_name_with_space(self):
         self.AddPage.fill_email_form('czxc@mail.ru')
         self.AddPage.fill_name_form(' Нина ')
         self.AddPage.fill_gender_form('Женский')
@@ -116,7 +116,7 @@ class TestAddUser:
         table_email= self.AddPage.get_email_table_row()
         assert 'onebv@mail.ru' == table_email
 
-    def test_add_user_zero_choose_radio_group(self):
+    def test_add_user_zero_choose_radiogroup(self):
         self.AddPage.fill_email_form('zxvjn@mail.ru')
         self.AddPage.fill_name_form('Игорь')
         self.AddPage.fill_gender_form('Мужской')
@@ -125,7 +125,7 @@ class TestAddUser:
         add_message = self.AddPage.get_add_success_message()
         assert "Данные добавлены." == add_message
 
-    def test_add_user_zero_choose_radio_group_and_checkbox(self):
+    def test_add_user_zero_choose_radiogroup_and_checkbox(self):
         self.AddPage.fill_email_form('nmvbcx@mail.ru')
         self.AddPage.fill_name_form('Татьяна')
         self.AddPage.fill_gender_form('Женский')
@@ -142,4 +142,5 @@ class TestAddUser:
         self.AddPage.click_add_button()
         add_message = self.AddPage.get_add_success_message()
         assert "Данные добавлены." == add_message
+
 
