@@ -85,7 +85,7 @@ class TestAddUser:
         self.AddPage.click_add_button()
         error_email = self.AddPage.get_error_email_message()
         assert "Неверный формат E-Mail" == error_email
-#в теории данные не должен приниматься
+
     def test_add_user_without_probel_name_form(self):
         self.AddPage.fill_email_form('czxc@mail.ru')
         self.AddPage.fill_name_form(' Нина ')
@@ -142,3 +142,4 @@ class TestAddUser:
         self.AddPage.click_add_button()
         add_message = self.AddPage.get_add_success_message()
         assert "Данные добавлены." == add_message
+
